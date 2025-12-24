@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --reale-black: #000000;
+    --reale-yellow: #FFD700;
+    --reale-orange: #FF8C00;
+    --reale-dark: #121212;
+    --reale-darker: #0A0A0A;
+    --reale-gray: #2A2A2A;
+    --reale-light-gray: #3A3A3A;
+  }
+
+  .dark {
+    --reale-black: #000000;
+    --reale-yellow: #FFD700;
+    --reale-orange: #FF8C00;
+    --reale-dark: #121212;
+    --reale-darker: #0A0A0A;
+    --reale-gray: #2A2A2A;
+    --reale-light-gray: #3A3A3A;
+  }
+}
+
+body {
+  background-color: var(--reale-black);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.message-bubble {
+  border-radius: 12px;
+  padding: 8px 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message-bubble.sent {
+  background-color: var(--reale-orange);
+  margin-left: auto;
+  border-bottom-right-radius: 2px;
+}
+
+.message-bubble.received {
+  background-color: var(--reale-gray);
+  margin-right: auto;
+  border-bottom-left-radius: 2px;
+}
+
+.server-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.server-icon:hover {
+  border-radius: 12px;
+  transform: scale(1.05);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-item {
+  transition: background-color 0.2s ease;
+}
+
+.chat-item:hover {
+  background-color: var(--reale-darker);
+}
+
+.sidebar-item {
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: var(--reale-gray);
+}
+
+.sidebar-item.active {
+  background-color: var(--reale-light-gray);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
